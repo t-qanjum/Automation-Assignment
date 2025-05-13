@@ -1,5 +1,6 @@
-# SauceDemo Automation Testing
+"Apologies for the late submission. I had checked earlier and saw that the deadline was May 13, 2025, at 11:59 PM."
 
+# SauceDemo Automation Testing
 ## Project Overview
 This project automates testing for the SauceDemo website (https://www.saucedemo.com/). It includes three test scenarios
 Q1
@@ -26,47 +27,42 @@ Addidionally in Q4
 - Allure
 
 
-
 ## Installation
-# Clone the repository
-git clone https://github.com/t-qanjum/Automation-Assignment
 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/t-qanjum/Automation-Assignment.git
+   ```
 
-# Navigate to the project directory
-cd Automation-Testing-Assignment-2
+2. **Navigate to the project directory**
+   ```bash
+   cd Automation-Assignment
+   ```
 
+3. **Install all project dependencies**
+   ```bash
+   npm install
+   ```
 
-# Initialize a new git repository (if not already initialized)
-git init
+4. **(Optional) If you do not have Allure CLI installed globally:**
+   ```bash
+   npm install -g allure-commandline --save-dev
+   ```
 
+---
 
-# Install all project dependencies
-npm install
+## Running Tests and Viewing Allure Report
 
+To run all tests, generate the Allure report, and open it automatically, use:
 
-# Running Tests
-1. Run All Tests
- --npx wdio run wdio.conf.js
-   
-2. Run Specific Test
- --npx wdio run wdio.conf.js --spec ./test/specs/<test-file>.js
- (Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js >)
+```bash
+npm run test:allure
+```
 
-# Install Allure CLI globally if not installed:
-npm install -g allure-commandline --save-dev
-
-
-# To Generate Allure reports
-1. Generate the Allure report:
- --allure generate allure-results --clean -o allure-report
-   
-2. Opens the Allure report:
- --npx allure open allure-report
-
-
-# (Optional) If WebdriverIO is not set up, you can initialize it with:
-npx wdio config
-
-
-# (Optional) If you need to install WebdriverIO and related packages:
-npm install @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/spec-reporter @wdio/sync webdriverio
+`package.json` must include the following scripts to create allure report automatically:
+"scripts": {
+  "test": "wdio run wdio.conf.js",
+  "allure:generate": "allure generate allure-results --clean -o allure-report",
+  "allure:open": "allure open allure-report",
+  "test:allure": "npm run test && npm run allure:generate && npm run allure:open"
+}
