@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7792","should complete full purchase journey with app state reset","","Tue May 13 17:13:58 BDT 2025","passed","Tue May 13 17:14:05 BDT 2025","","Q2: Standard User Purchase Flow","",""
+"","18774","should complete purchase with Z to A sorting","","Tue May 13 17:14:11 BDT 2025","passed","Tue May 13 17:14:29 BDT 2025","","Q3: Performance Glitch User Flow","",""
+"","28720","should execute all test scenarios in sequence","","Tue May 13 17:14:34 BDT 2025","passed","Tue May 13 17:15:03 BDT 2025","","Q4: Combined Test Flow","",""
+"","1895","should show error message when logging in with locked_out_user","","Tue May 13 17:13:50 BDT 2025","passed","Tue May 13 17:13:52 BDT 2025","","Q1: Locked Out User Test","",""
