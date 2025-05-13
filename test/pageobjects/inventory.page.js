@@ -1,3 +1,4 @@
+// For the element and actions related to product page
 class InventoryPage {
     get menuBtn() { return $('#react-burger-menu-btn'); }
     get resetAppBtn() { return $('#reset_sidebar_link'); }
@@ -54,19 +55,3 @@ class InventoryPage {
     }
 }
 module.exports = new InventoryPage();
-// Compare this snippet from test/specs/Q4_combinedFlow.spec.js:
-//         await browser.pause(1000); // Small pause to ensure any animations complete
-//         await $('#react-burger-menu-btn').click();
-//
-//
-//         // Ensure the menu button is interactable before clicking
-//         await browser.execute(() => {
-//             const menuButton = document.querySelector('#react-burger-menu-btn');
-//             if (menuButton) {
-//                 menuButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
-//             }
-//         });
-//         await browser.waitUntil(async () => {
-//             const menuButton = document.querySelector('#react-burger-menu-btn');
-//             return menuButton && menuButton.offsetParent !== null;
-//         });
