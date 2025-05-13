@@ -48,8 +48,7 @@ npm install
 
 2. Run Specific Test
  --npx wdio run wdio.conf.js --spec ./test/specs/<test-file>.js
-
- <!-- Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js > -->
+ (Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js >)
 
 # To Generate Allure reports
 Generate the Allure report:
