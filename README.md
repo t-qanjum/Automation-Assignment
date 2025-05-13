@@ -28,38 +28,45 @@ Addidionally in Q4
 
 
 ## Installation
-
 # Clone the repository
 git clone https://github.com/t-qanjum/Automation-Assignment
+
 
 # Navigate to the project directory
 cd Automation-Testing-Assignment-2
 
+
 # Initialize a new git repository (if not already initialized)
 git init
+
 
 # Install all project dependencies
 npm install
 
+
 # Running Tests
 1. Run All Tests
  --npx wdio run wdio.conf.js
-
-
+   
 2. Run Specific Test
  --npx wdio run wdio.conf.js --spec ./test/specs/<test-file>.js
+ (Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js >)
 
- <!-- Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js > -->
+# Install Allure CLI globally if not installed:
+npm install -g allure-commandline --save-dev
+
 
 # To Generate Allure reports
-Generate the Allure report:
+1. Generate the Allure report:
  --allure generate allure-results --clean -o allure-report
-Opens the Allure report:
+   
+2. Opens the Allure report:
  --npx allure open allure-report
 
 
 # (Optional) If WebdriverIO is not set up, you can initialize it with:
 npx wdio config
+
 
 # (Optional) If you need to install WebdriverIO and related packages:
 npm install @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/spec-reporter @wdio/sync webdriverio
