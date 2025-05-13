@@ -1,53 +1,65 @@
 # SauceDemo Automation Testing
 
 ## Project Overview
-This project automates testing for the SauceDemo website (https://www.saucedemo.com/). It includes three test scenarios:
+This project automates testing for the SauceDemo website (https://www.saucedemo.com/). It includes three test scenarios
+Q1
+ Try login with locked_out_user and verify the error message.
 
-1. **Locked Out User Login**: Verifies the error message user named locked-out user.
-2. **Standard User Purchase Flow**: Completes a purchase journey for user named standard_user, including resetting the app state and verifying product details.
-3. **Performance Glitch User Flow**: Completes a purchase journey for a performance glitch user, including sorting products and verifying details.
+
+Q2
+ Log in with standard_user. Then, from the hamburger menu, reset the App State. Add any three items to the cart. Navigate to the final checkout page and verify the product name and total price. Finish the purchase journey and verify the successful order message. Then, reset the App State again and log out.
+
+
+Q3
+ Login with performance_glitch_user and reset the App State. Then filter by name (Z to A) and select the first product into the cart. Then navigate up to the final checkout page and verify all the products' names and the total price. Then finish the purchase journey and verify the successful order message. Then, reset the App State again and log out.
+
+
+Addidionally in Q4
+ All the above three tests scenarios should run sequentially.
+
+
 
 ## Prerequisites
-- Node.js installed on your system.
-- WebdriverIO installed locally in the project.
-- Allure Commandline installed for generating reports.
+- Node.js
+- npm
+- WebdriverIO
+- Allure
+
+
 
 ## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd saucedemo-automation-final
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
 
-## Running Tests
-### Run All Tests
-```bash
-npx wdio run wdio.conf.js
-```
+# Clone the repository
+git clone https://github.com/t-qanjum/Automation-Assignment
 
-### Run Specific Test
-```bash
-npx wdio run wdio.conf.js --spec ./test/specs/<test-file>.js
-```
-Replace `<test-file>` with the desired test file, e.g., `lockedOutUser.spec.js`.
+# Navigate to the project directory
+cd Automation-Testing-Assignment-2
 
-## Generating Allure Report
-1. Run tests to generate results:
-   ```bash
-   npx wdio run wdio.conf.js
-   ```
-2. Generate the Allure report:
-   ```bash
-   allure generate allure-results --clean
-   ```
-3. Open the Allure report:
-   ```bash
-   allure open
-   ```
+# Initialize a new git repository (if not already initialized)
+git init
+
+# Install all project dependencies
+npm install
+
+# Running Tests
+1. Run All Tests
+ --npx wdio run wdio.conf.js
+
+
+2. Run Specific Test
+ --npx wdio run wdio.conf.js --spec ./test/specs/<test-file>.js
+
+ <!-- Replace <test-file> with the desired test file like-< Q1_lockedOutUser.spec.js > -->
+
+# To Generate Allure reports
+Generate the Allure report:
+ --allure generate allure-results --clean -o allure-report
+Opens the Allure report:
+ --npx allure open allure-report
+
+
+# (Optional) If WebdriverIO is not set up, you can initialize it with:
+npx wdio config
+
+# (Optional) If you need to install WebdriverIO and related packages:
+npm install @wdio/cli @wdio/local-runner @wdio/mocha-framework @wdio/spec-reporter @wdio/sync webdriverio
